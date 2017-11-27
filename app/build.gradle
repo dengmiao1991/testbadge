@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "qihoo360.testbadge"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+buildscript {
+    repositories {
+        maven {
+            url 'http://s3.qbuild.corp.qihoo.net:8360/nexus/content/repositories/qihoomobilesafe/'
+        }
+        maven {
+            url "http://s3.qbuild.corp.qihoo.net:8360/nexus/content/groups/qbuild/"
+        }
+    }
+    dependencies {
+        classpath 'com.qihoo.mobilesafe.gradle.plugin:aspectjx:0.0.4'
+        classpath 'com.qihoo.gradle:AndResPorguard:0.1.1'
+        classpath 'com.qihoo.gradle:MsPluginX:0.1.8'
+    }
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'com.qihoo360.mobilesafe:shortcutsdk-i:2.1.5'
+}

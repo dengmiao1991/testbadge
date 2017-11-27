@@ -1,0 +1,44 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="bactivity"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/app_name"
+        android:shortcutLongLabel="@string/app_name"
+        android:shortcutDisabledMessage="@string/app_name">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="qihoo360.testbadge"
+            android:targetClass="qihoo360.testbadge.BActivity" />
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+    <shortcut
+        android:shortcutId="cactivity"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/app_name"
+        android:shortcutLongLabel="@string/app_name"
+        android:shortcutDisabledMessage="@string/app_name">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="qihoo360.testbadge"
+            android:targetClass="qihoo360.testbadge.CActivity" />
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+    <shortcut
+        android:shortcutId="mainactivity"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/app_name"
+        android:shortcutLongLabel="@string/app_name"
+        android:shortcutDisabledMessage="@string/app_name">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="qihoo360.testbadge"
+            android:targetClass="qihoo360.testbadge.MainActivity" />
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+</shortcuts>
